@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=4 uid="uid://b0gxn60dnfdym"]
+
+[ext_resource type="Script" path="res://layer_holder.gd" id="1_vabl6"]
+[ext_resource type="Texture2D" uid="uid://du06ryn1ustiy" path="res://simple64x_tiles6.png" id="2_xxq36"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7m41a"]
+texture = ExtResource("2_xxq36")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0q5ay"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_7m41a")
+
+[node name="main" type="Node2D"]
+
+[node name="layer_holder" type="Node2D" parent="."]
+script = ExtResource("1_vabl6")
+
+[node name="red_layer" type="TileMapLayer" parent="layer_holder"]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAADAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_0q5ay")
+
+[node name="blue_layer" type="TileMapLayer" parent="layer_holder"]
+tile_map_data = PackedByteArray("AAAAAP//AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD//wAAAAABAAEAAAD/////AAABAAEAAAA=")
+tile_set = SubResource("TileSet_0q5ay")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 124)
+zoom = Vector2(2, 2)
